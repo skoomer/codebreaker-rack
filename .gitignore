@@ -12,7 +12,6 @@
 .gem
 *.gem
 *.rbc
-Gemfile.lock
 doc/
 lib/bundler/man
 pkg

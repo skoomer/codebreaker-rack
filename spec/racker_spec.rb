@@ -8,6 +8,7 @@ RSpec.describe Racker do
     before do
       post '/game', level: 'hell', player_name: 'Ivan', game: game
     end
+
     it 'return game ' do
       get '/game'
       expect(last_request[:game]).to eq(last_response[:game])
@@ -53,6 +54,7 @@ RSpec.describe Racker do
       it 'return status 200  if path /win' do
         expect(last_response.body).to include I18n.t(:congratulations, name: game.user.username)
       end
+
       it ' return 404' do
         get '/win'
         expect(last_response).to be_ok

@@ -107,6 +107,7 @@ class Racker
 
   def index
     return game_render if exist?(:game)
+
     menu_render
   end
 

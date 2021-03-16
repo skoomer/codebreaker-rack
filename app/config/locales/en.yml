@@ -1,0 +1,45 @@
+en:
+  difficulty:
+    easy: 'easy'
+    medium: 'medium'
+    hell: 'hell'
+  codebreaker_web: Codebreaker Web
+  codebreaker: Codebreaker 2021
+  error_404: Error 404
+  page_not_found: Page not found
+  hello_msg: "Hello, %{name}!"
+  mini_rules: Try to guess 4-digit number, that consists of numbers in a range from 1 to 6.
+  player_name: "Player's name:"
+  game_level: "Game level:"
+  choose_level: "Choose game level..."
+  easy: Easy
+  medium: Medium
+  hell: Hell
+  submit: Submit
+  start_game: "Start the game!"
+  rules: Rules
+  statistics: Statistics
+  rules_game: Rules Game
+  home: Home
+  level: "Level:"
+  attempts_left: "Attempts Left"
+  hints_left: "Hints Left"
+  the_code_was: The code was
+  oops: "Oops, %{name}! You lose the game!"
+  congratulations: "Congratulations, %{name}! You won the game!"
+  sharp: '#'
+  code_was: The code was
+  play_again: "Play again!"
+  top_players: "Top of Players"
+  name: Name
+  date: Date
+  attempts: Attempts
+  hints: Hints
+  show_hint: "Show hint!"
+  short_rules: Try to guess 4-digit number, that consists of numbers in a range from 1 to 6.
+
+  game_rules: "The Rules\n\n
+       The main rule of the game is to guess the secret code\n
+       You will have a number of attempts and hints depending on the difficulty of the game you choose
+       \nEasy: 15 attempts 2 hints\n Medium: 10 attempts 1 hints\n Hell: 5 attempts 1 hints\n
+       Enter exit "

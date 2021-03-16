@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" class="mdl-js">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="stylesheets/favicon.ico" rel="icon">
+    <link href="stylesheets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="stylesheets/dist/css/styles.css" rel="stylesheet">
+    <script src="stylesheets/dist/js/jquery.min.js"></script>
+    <script src="stylesheets/dist/js/bootstrap.min.js"></script>
+  <title><%= I18n.t(:codebreaker_web)%></title>
+  
+</head>
+
+<body>
+  <section id="introduction">
+    <div class="container">
+      <div class="row fill-viewport align-items-center justify-content-center">
+        <div class="col-12 col-md-6">
+          <div class="row">
+            <div class="col-md-auto">
+              <h1 class="text-white title"><%= I18n.t(:codebreaker)%></h1>
+            </div>
+          </div>
+          <p class="lead text-white-70"> <%= I18n.t(:rules_game)%></p>
+          <hr class="mb-4">
+          <div class="table-responsive-md scores">
+            <table class="table table-striped table table-sm">
+              <thead>
+            <%=I18n.t(:game_rules) %>
+              </thead>
+             
+              
+            </table>
+          </div>
+          <hr class="mb-4">
+          <a class="btn btn-primary btn-lg" href="/" role="button">
+            <%= I18n.t(:home)%>
+          </a>
+        </div>
+       </div>
+    </section>
+  </body>
+</html>

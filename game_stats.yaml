@@ -1,0 +1,176 @@
+---
+- !ruby/object:Codebreaker::Gamebreaker
+  code: ''
+  secret_code:
+  - 4
+  - 4
+  - 4
+  - 6
+  date: 2021-03-16
+  storage: !ruby/object:Codebreaker::Stats {}
+  user: !ruby/object:Codebreaker::User
+    username: Game
+  game_level: !ruby/object:Codebreaker::Gamelevel
+    difficulty: :easy
+  attempts: 12
+  hints: 1
+  guess:
+  - 4
+  - 4
+  - 4
+  - 6
+- !ruby/object:Codebreaker::Gamebreaker
+  code: ''
+  secret_code:
+  - 1
+  - 2
+  - 6
+  - 4
+  date: 2021-03-16
+  storage: !ruby/object:Codebreaker::Stats {}
+  user: !ruby/object:Codebreaker::User
+    username: rrroooo
+  game_level: !ruby/object:Codebreaker::Gamelevel
+    difficulty: :medium
+  attempts: 8
+  hints: 1
+  guess:
+  - 1
+  - 2
+  - 6
+  - 4
+- !ruby/object:Codebreaker::Gamebreaker
+  code: ''
+  secret_code:
+  - 1
+  - 4
+  - 4
+  - 1
+  date: 2021-03-16
+  storage: !ruby/object:Codebreaker::Stats {}
+  user: !ruby/object:Codebreaker::User
+    username: Ivan
+  game_level: !ruby/object:Codebreaker::Gamelevel
+    difficulty: easy
+  attempts: 15
+  hints: 2
+- !ruby/object:Codebreaker::Gamebreaker
+  code: ''
+  secret_code:
+  - 3
+  - 6
+  - 3
+  - 3
+  date: 2021-03-16
+  storage: !ruby/object:Codebreaker::Stats {}
+  user: !ruby/object:Codebreaker::User
+    username: Ivan
+  game_level: !ruby/object:Codebreaker::Gamelevel
+    difficulty: easy
+  attempts: 15
+  hints: 2
+- !ruby/object:Codebreaker::Gamebreaker
+  code: ''
+  secret_code:
+  - 3
+  - 6
+  - 3
+  - 3
+  date: 2021-03-16
+  storage: !ruby/object:Codebreaker::Stats {}
+  user: !ruby/object:Codebreaker::User
+    username: Ivan
+  game_level: !ruby/object:Codebreaker::Gamelevel
+    difficulty: easy
+  attempts: 15
+  hints: 2
+- !ruby/object:Codebreaker::Gamebreaker
+  code: ''
+  secret_code:
+  - 5
+  - 4
+  - 1
+  - 1
+  date: 2021-03-16
+  storage: !ruby/object:Codebreaker::Stats {}
+  user: !ruby/object:Codebreaker::User
+    username: Ivan
+  game_level: !ruby/object:Codebreaker::Gamelevel
+    difficulty: easy
+  attempts: 15
+  hints: 2
+- !ruby/object:Codebreaker::Gamebreaker
+  code: ''
+  secret_code:
+  - 4
+  - 3
+  - 5
+  - 5
+  date: 2021-03-16
+  storage: !ruby/object:Codebreaker::Stats {}
+  user: !ruby/object:Codebreaker::User
+    username: Ivan
+  game_level: !ruby/object:Codebreaker::Gamelevel
+    difficulty: easy
+  attempts: 15
+  hints: 2
+- !ruby/object:Codebreaker::Gamebreaker
+  code: ''
+  secret_code:
+  - 4
+  - 3
+  - 5
+  - 5
+  date: 2021-03-16
+  storage: !ruby/object:Codebreaker::Stats {}
+  user: !ruby/object:Codebreaker::User
+    username: Ivan
+  game_level: !ruby/object:Codebreaker::Gamelevel
+    difficulty: easy
+  attempts: 15
+  hints: 2
+- !ruby/object:Codebreaker::Gamebreaker
+  code: ''
+  secret_code:
+  - 2
+  - 3
+  - 5
+  - 4
+  date: 2021-03-16
+  storage: !ruby/object:Codebreaker::Stats {}
+  user: !ruby/object:Codebreaker::User
+    username: Ivan
+  game_level: !ruby/object:Codebreaker::Gamelevel
+    difficulty: easy
+  attempts: 15
+  hints: 2
+- !ruby/object:Codebreaker::Gamebreaker
+  code: ''
+  secret_code:
+  - 1
+  - 1
+  - 6
+  - 1
+  date: 2021-03-16
+  storage: !ruby/object:Codebreaker::Stats {}
+  user: !ruby/object:Codebreaker::User
+    username: Ivan
+  game_level: !ruby/object:Codebreaker::Gamelevel
+    difficulty: easy
+  attempts: 15
+  hints: 2
+- !ruby/object:Codebreaker::Gamebreaker
+  code: ''
+  secret_code:
+  - 1
+  - 1
+  - 6
+  - 1
+  date: 2021-03-16
+  storage: !ruby/object:Codebreaker::Stats {}
+  user: !ruby/object:Codebreaker::User
+    username: Ivan
+  game_level: !ruby/object:Codebreaker::Gamelevel
+    difficulty: easy
+  attempts: 15
+  hints: 2

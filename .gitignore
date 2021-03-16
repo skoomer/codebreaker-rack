@@ -1,0 +1,25 @@
+/.bundle/
+/.yardoc
+/_yardoc/
+/coverage/
+/doc/
+/pkg/
+/spec/reports/
+/tmp/
+
+# rspec failure tracking
+.rspec_status
+.gem
+*.gem
+*.rbc
+Gemfile.lock
+doc/
+lib/bundler/man
+pkg
+rdoc
+.txt
+.vscode
+/.vscode
+/.vscode/
+.yml
+.yaml

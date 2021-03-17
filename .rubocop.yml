@@ -12,7 +12,9 @@ Style/Documentation:
 
 Style/FrozenStringLiteralComment:
   Enabled: false
-# Metrics/AbcSize:
-#   Max: 17.38
+
+Metrics/AbcSize:
+  Max: 17.38
+  
 ClassLength:
-  Max: 150
+  Max: 130

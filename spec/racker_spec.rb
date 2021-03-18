@@ -102,11 +102,6 @@ RSpec.describe Racker do
       get '/blalbla'
       expect(last_response).to be_ok
     end
-
-    # it 'return status 200  if path /lose' do
-    #   get '/lose'
-    #   expect(last_response).to be_ok
-    # end
   end
 
   describe '#lose' do
@@ -121,17 +116,4 @@ RSpec.describe Racker do
       expect(last_response).to be_ok
     end
   end
-
-  # describe '#statistics' do
-  #   # it 'return stats render ' do
-  #   #   get '/statistics'
-  #   #   expect(last_response).to be_ok
-  #   # end
-  # end
-  # describe '#not_found' do
-  #   # it 'return 404 ' do
-  #   #   get '/blalbla'
-  #   #   expect(last_response).to be_ok
-  #   # end
-  # end
 end

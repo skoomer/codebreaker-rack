@@ -17,7 +17,6 @@ commands:
       - checkout
       - restore_cache:
           keys:
-            # - *bundle_cache_full
             - *bundle_cache
       - run: bundle install --path vendor/bundle
 

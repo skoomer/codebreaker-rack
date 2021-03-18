@@ -12,9 +12,7 @@ class Racker
   end
 
   def response
-    path = @request.path
-
-    case path
+    case @request.path
     when '/' then index
     when '/game' then game
     when '/rules' then rules_render

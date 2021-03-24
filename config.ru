@@ -2,7 +2,7 @@ require_relative 'autoloader'
 
 use Rack::Reloader
 # use Rack::Static, urls: ['/stylesheets', '/assets','/node_modules'], root: 'public'
-use Rack::Static, urls: ['/public','/node_modules']
+use Rack::Static, urls: ['/public', '/node_modules']
 
 use Rack::Session::Cookie, key: 'rack.session',
                            path: '/',

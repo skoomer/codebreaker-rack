@@ -14,8 +14,8 @@ gem 'lefthook', require: false
 gem 'pry', require: false
 gem 'rack'
 gem 'rack-test'
-gem 'wisper', '2.0.0'
 gem 'rspec', require: false
 gem 'rubocop', require: false
 gem 'rubocop-rspec', require: false
 gem 'simplecov', require: false, group: :test
+gem 'wisper', '2.0.0'

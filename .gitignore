@@ -6,8 +6,10 @@
 /pkg/
 /spec/reports/
 /tmp/
-
+node_modules
+/node_modules/
 .rspec_status
+yarn.lock
 .gem
 *.gem
 *.rbc

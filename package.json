@@ -4,11 +4,9 @@
   "description": "logic_game",
   "repository": "https://github.com/skoomer/codebreaker-rack",
   "engines": {
-    "node": ">= 10.19.0",
+    "node": ">= 15.12.0",
     "yarn": ">= 1.22.5"
   },
-
-
 
   "dependencies": {
     "bootstrap": "4.6.0",

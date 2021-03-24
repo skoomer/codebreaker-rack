@@ -25,8 +25,6 @@ GEM
     parallel (1.20.1)
     parser (3.0.0.0)
       ast (~> 2.4.1)
-    pastel (0.8.0)
-      tty-color (~> 0.5)
     pry (0.14.0)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -73,33 +71,7 @@ GEM
       simplecov_json_formatter (~> 0.1)
     simplecov-html (0.12.3)
     simplecov_json_formatter (0.1.2)
-    slim (4.1.0)
-      temple (>= 0.7.6, < 0.9)
-      tilt (>= 2.0.6, < 2.1)
-    strings (0.2.1)
-      strings-ansi (~> 0.2)
-      unicode-display_width (>= 1.5, < 3.0)
-      unicode_utils (~> 1.4)
-    strings-ansi (0.2.0)
-    temple (0.8.2)
-    tilt (2.0.10)
-    tty-color (0.6.0)
-    tty-cursor (0.7.1)
-    tty-prompt (0.23.0)
-      pastel (~> 0.8)
-      tty-reader (~> 0.8)
-    tty-reader (0.9.0)
-      tty-cursor (~> 0.7)
-      tty-screen (~> 0.8)
-      wisper (~> 2.0)
-    tty-screen (0.8.1)
-    tty-table (0.12.0)
-      pastel (~> 0.8)
-      strings (~> 0.2.0)
-      tty-screen (~> 0.8)
     unicode-display_width (2.0.0)
-    unicode_utils (1.4.0)
-    wisper (2.0.1)
 
 PLATFORMS
   ruby
@@ -117,9 +89,6 @@ DEPENDENCIES
   rubocop
   rubocop-rspec
   simplecov
-  slim
-  tty-prompt
-  tty-table
 
 RUBY VERSION
    ruby 2.7.2p137

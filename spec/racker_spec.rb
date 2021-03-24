@@ -2,6 +2,9 @@ RSpec.describe Racker do
   let(:app) { Rack::Builder.parse_file('config.ru').first }
 
   let(:game) { Codebreaker::Gamebreaker.new }
+  let(:enter_guess_code) { '1' * Codebreaker::Constants::SECRET_CODE_LENGHT }
+  let(:zero_attempts) {  (Codebreaker::Constants::GAME_LEVEL[:easy][:attempts] * 0) }
+
   let(:path) { 'game_stats.yml' }
 
   describe '#start_game' do
@@ -107,8 +110,9 @@ RSpec.describe Racker do
   describe '#lose' do
     before do
       game.game_level_set('easy')
-      env 'rack.session', game: game, guess_code: '1111', attempts: 0, hints: 1, level: 'easy', player_name: 'Ivan'
-      post '/guess', guess_code: '1111'
+      env 'rack.session', game: game, guess_code: enter_guess_code, attempts: zero_attempts,
+                          level: game.game_level.difficulty, player_name: 'Ivan'
+      post '/guess', guess_code: enter_guess_code
     end
 
     it 'destroy session if lose' do

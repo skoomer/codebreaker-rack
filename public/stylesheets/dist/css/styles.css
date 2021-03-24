@@ -64,3 +64,14 @@ input::-webkit-inner-spin-button {
 .scores {
   background: white;
 }
+
+#poss {
+  
+  margin: 20px 0 0 0;
+
+  padding: 4px 20px 4px 24px;
+  width: 254px;
+  margin-left:500px;
+  margin-top:40px;
+  height: 30px;
+}

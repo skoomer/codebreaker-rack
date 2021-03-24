@@ -27,6 +27,9 @@
           <div class="table-responsive-md scores">
             <table class="table table-striped table table-sm">
               <thead>
+                <% if @request.session[:scores].empty? %>
+                 <tr><%= I18n.t(:stats_no_winners)%></tr>
+                  <%else%>
                 <tr>
                   <th scope="col"><%= I18n.t(:sharp)%></th>
                   <th scope="col"><%= I18n.t(:name)%></th>
@@ -46,7 +49,10 @@
                   <td><%= data.hints %></td>
                   <td><%= data.date %></td>
                </tr>
+               
              <% end %>
+             <% end %>
+           
               </tbody>
             </table>
           </div>

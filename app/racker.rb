@@ -1,5 +1,6 @@
 class Racker
   include RenderHelper
+  include RackerHelper
   attr_reader :request
 
   def self.call(env)
@@ -34,12 +35,12 @@ class Racker
   end
 
   def guess
-    return not_found_render unless exist?(:game)
+    return index unless exist?(:game)
 
     Rack::Response.new do |response|
       return lose unless game_session.attempts.positive?
 
-      @request.session[:guess_code] = game_session.exact_match(@request.params['guess_code'])
+      guess_helper
       return win if game_session.game_win?
 
       response.redirect('/game')
@@ -47,60 +48,17 @@ class Racker
   end
 
   def guess_helper
-    return lose unless game_session.attempts.positive?
-  end
+    guess_code = @request.params['guess_code']
+    return game if guess_code.nil?
 
-  def lose
-    return not_found_render unless exist?(:game)
-
-    Rack::Response.new(lose_render) do
-      destroy_session
-    end
-  end
-
-  def show_stats
-    @request.session[:scores] = @storage_game.sort_stats
-    statistics_render
-  end
-
-  def win
-    return not_found_render unless exist?(:game)
-
-    Rack::Response.new(win_render) do
-      @storage_game.save_data(start_game)
-      destroy_session
-    end
+    @request.session[:guess_code] = game_session.exact_match(guess_code)
   end
 
   def game
-    return not_found_render unless start_game
+    return index unless start_game
 
     @request.session[:game] ||= start_game
     game_render
-  end
-
-  def user_name
-    return @request.session[:name] if exist?(:name)
-
-    @request.session[:name] = @request.params['player_name']
-  end
-
-  def user_level
-    return @request.session[:level] if exist?(:level)
-
-    @request.session[:level] = @request.params['level']
-  end
-
-  def user_attempts
-    return @request.session[:game].attempts if exist?(:game)
-
-    Codebreaker::Gamebreaker::GAME_LEVEL[user_level.to_sym][:attempts]
-  end
-
-  def user_hints
-    return @request.session[:game].hints if exist?(:game)
-
-    Codebreaker::Gamebreaker::GAME_LEVEL[user_level.to_sym][:hints]
   end
 
   def index
@@ -113,19 +71,13 @@ class Racker
     @request.session.clear
   end
 
-  def used_hints
-    return @request.session[:used_hints] if exist?(:used_hints)
-
-    @request.session[:used_hints] = []
-  end
-
   def hints_zero?
     game = start_game
     game.hints.zero?
   end
 
   def hint
-    return not_found_render unless exist?(:game)
+    return index unless exist?(:game)
 
     Rack::Response.new do |response|
       start_game

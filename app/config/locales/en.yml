@@ -22,12 +22,14 @@ en:
   rules_game: Rules Game
   home: Home
   level: "Level:"
+  hints_zero: Your hints zero
   attempts_left: "Attempts Left"
   hints_left: "Hints Left"
   the_code_was: The code was
   oops: "Oops, %{name}! You lose the game!"
   congratulations: "Congratulations, %{name}! You won the game!"
   sharp: '#'
+  stats_no_winners: There are no winners yet! Be the first!
   code_was: The code was
   play_again: "Play again!"
   top_players: "Top of Players"
@@ -35,7 +37,7 @@ en:
   date: Date
   attempts: Attempts
   hints: Hints
-  show_hint: "Show hint!"
+  show_hint: "Show hints!"
   short_rules: Try to guess 4-digit number, that consists of numbers in a range from 1 to 6.
 
   game_rules: "The Rules\n\n

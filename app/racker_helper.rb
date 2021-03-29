@@ -1,6 +1,6 @@
 module RackerHelper
   include RenderHelper
-  
+
   def show_stats
     return game if exist?(:game)
 

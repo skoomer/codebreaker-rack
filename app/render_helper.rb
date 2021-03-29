@@ -1,5 +1,4 @@
 module RenderHelper
-  
   PAGES = {
     menu_page: 'menu.html.erb',
     game_page: 'game.html.erb',

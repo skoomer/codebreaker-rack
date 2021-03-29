@@ -23,8 +23,8 @@
           </div>
 
           <p class="lead text-white-70">
-            <%= I18n.t(:hello_msg, name: user_name)%>
-            <%= I18n.t(:short_rules)%>
+            <%= I18n.t(:hello_msg, name: user_name) %>
+            <%= I18n.t(:short_rules) %>
           </p>
 
           <hr class="mb-4">
@@ -32,7 +32,7 @@
           <div class="row">
             <div class="col button">
               <button type="button" class="btn btn-primary" disabled>
-                <%= I18n.t(:level)%>
+                <%= I18n.t(:level) %>
                 <span class="badge badge-light">
                   <%= user_level %>
                 </span>
@@ -90,8 +90,8 @@
 
                 <% @request.session[:guess_code].split('').each do |el| %>
 
-                <% if el == '+'%> <button type="button" class="btn btn-success marks" disabled>+</button>
-                <% elsif el == '-'%> <button type="button" class="btn btn-primary marks" disabled>-</button>
+                <% if el == '+' %> <button type="button" class="btn btn-success marks" disabled>+</button>
+                <% elsif el == '-' %> <button type="button" class="btn btn-primary marks" disabled>-</button>
                 <% end %>
                 <% end %>
 

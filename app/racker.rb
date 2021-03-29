@@ -16,7 +16,7 @@ class Racker
     case @request.path
     when '/' then index
     when '/game' then game
-    when '/rules' then rules_render
+    when '/rules' then rules
     when '/lose' then lose
     when '/win' then win
     else response_helper
@@ -30,7 +30,7 @@ class Racker
     when '/hint' then hint
     when '/guess' then guess
     when '/statistics' then show_stats
-    else not_found_render
+    else render(PAGES[:not_found_page])
     end
   end
 
@@ -58,13 +58,13 @@ class Racker
     return index unless start_game
 
     @request.session[:game] ||= start_game
-    game_render
+    render(PAGES[:game_page])
   end
 
   def index
-    return game_render if exist?(:game)
+    return render(PAGES[:game_page]) if exist?(:game)
 
-    menu_render
+    render(PAGES[:menu_page])
   end
 
   def destroy_session
@@ -81,7 +81,7 @@ class Racker
 
     Rack::Response.new do |response|
       start_game
-      return game_render if hints_zero?
+      return render(PAGES[:game_page]) if hints_zero?
 
       used_hints.push(game_session.code_hints)
       response.redirect('/game')

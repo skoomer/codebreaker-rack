@@ -1,9 +1,11 @@
 module RackerHelper
+  include RenderHelper
+  
   def show_stats
     return game if exist?(:game)
 
     @request.session[:scores] = @storage_game.sort_stats
-    statistics_render
+    render(PAGES[:stats_page])
   end
 
   def user_name
@@ -39,15 +41,19 @@ module RackerHelper
   def lose
     return index unless exist?(:game)
 
-    Rack::Response.new(lose_render) do
+    Rack::Response.new(render(PAGES[:lose_page])) do
       destroy_session
     end
+  end
+
+  def rules
+    render(PAGES[:rules_page])
   end
 
   def win
     return index unless exist?(:game)
 
-    Rack::Response.new(win_render) do
+    Rack::Response.new(render(PAGES[:win_page])) do
       @storage_game.save_data(start_game)
       destroy_session
     end

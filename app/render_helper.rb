@@ -1,31 +1,14 @@
 module RenderHelper
-  def menu_render
-    render('menu.html.erb')
-  end
-
-  def game_render
-    render('game.html.erb')
-  end
-
-  def win_render
-    render('win.html.erb')
-  end
-
-  def lose_render
-    render('lose.html.erb')
-  end
-
-  def statistics_render
-    render('statistics.html.erb')
-  end
-
-  def not_found_render
-    render('error404.html.erb')
-  end
-
-  def rules_render
-    render('rules.html.erb')
-  end
+  
+  PAGES = {
+    menu_page: 'menu.html.erb',
+    game_page: 'game.html.erb',
+    win_page: 'win.html.erb',
+    lose_page: 'lose.html.erb',
+    stats_page: 'statistics.html.erb',
+    not_found_page: 'error404.html.erb',
+    rules_page: 'rules.html.erb'
+  }.freeze
 
   def render(template)
     path = File.expand_path("../views/#{template}", __FILE__)

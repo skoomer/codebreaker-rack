@@ -10,9 +10,6 @@ Style/Documentation:
 
 Style/FrozenStringLiteralComment:
   Enabled: false
-
-Metrics/AbcSize:
-  Max: 17.38
   
 Metrics/BlockLength:
   Exclude:

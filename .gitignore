@@ -1,16 +1,10 @@
 /.bundle/
-/.yardoc
-/_yardoc/
 /coverage/
-/doc/
 /pkg/
 /spec/reports/
 /tmp/
-node_modules
 /node_modules/
-.rspec_status
 yarn.lock
-.gem
 *.gem
 *.rbc
 doc/
@@ -18,8 +12,5 @@ lib/bundler/man
 pkg
 rdoc
 .txt
-.vscode
-/.vscode
 /.vscode/
-
 game_stats.yaml

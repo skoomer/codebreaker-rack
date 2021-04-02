@@ -13,7 +13,7 @@ class Racker
   end
 
   def response
-    case @request.path
+    case path
     when '/' then index
     when '/game' then game
     when '/rules' then rules
@@ -24,14 +24,16 @@ class Racker
   end
 
   def response_helper
-    path = @request.path
-
     case path
     when '/hint' then hint
     when '/guess' then guess
     when '/statistics' then show_stats
-    else render(PAGES[:not_found_page])
+    else not_found
     end
+  end
+
+  def path
+    @path ||= @request.path
   end
 
   def guess
@@ -54,33 +56,20 @@ class Racker
     @request.session[:guess_code] = game_session.exact_match(guess_code)
   end
 
-  def game
-    return index unless start_game
-
-    @request.session[:game] ||= start_game
-    render(PAGES[:game_page])
-  end
-
   def index
     return render(PAGES[:game_page]) if exist?(:game)
 
     render(PAGES[:menu_page])
   end
 
-  def destroy_session
-    @request.session.clear
-  end
-
   def hints_zero?
-    game = start_game
-    game.hints.zero?
+    game_session.hints.zero?
   end
 
   def hint
     return index unless exist?(:game)
 
     Rack::Response.new do |response|
-      start_game
       return render(PAGES[:game_page]) if hints_zero?
 
       used_hints.push(game_session.code_hints)
@@ -92,7 +81,15 @@ class Racker
     @request.session.key?(param)
   end
 
+  def game
+    return index unless start_game
+
+    @request.session[:game] ||= start_game
+    render(PAGES[:game_page])
+  end
+
   def start_game
+    binding.pry
     return game_session if exist?(:game)
 
     return false if @request.params.empty?
@@ -106,6 +103,10 @@ class Racker
 
   private
 
+  def destroy_session
+    @request.session.clear
+  end
+
   def level
     @request.params['level']
   end
@@ -115,12 +116,6 @@ class Racker
   end
 
   def difficulty_player(game)
-    game_level = case level
-                 when I18n.t(:easy, scope: [:difficulty]) then :easy
-                 when I18n.t(:medium, scope: [:difficulty]) then :medium
-                 when I18n.t(:hell, scope: [:difficulty]) then :hell
-                 end
-
-    game.game_level_set(game_level)
+    game.game_level_set(level)
   end
 end

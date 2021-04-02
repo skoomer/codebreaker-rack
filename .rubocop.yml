@@ -4,16 +4,17 @@ require:
 Metrics/LineLength:
   Max: 120
 
-
 Style/Documentation:
   Enabled: false
 
 Style/FrozenStringLiteralComment:
   Enabled: false
-  
+
+RSpec/MultipleMemoizedHelpers:
+  Enabled: false
+
 Metrics/BlockLength:
   Exclude:
     - 'spec/**/*'
-    - 'vendor/*'
     - 'vendor/**/*'
-    - 'node_modules/**/*'
+

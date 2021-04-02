@@ -9,32 +9,38 @@ module RackerHelper
   end
 
   def user_name
-    return @request.session[:name] if exist?(:name)
+    exist?(:name) ? @request.session[:name] : user_name_set
+  end
 
+  def user_name_set
     @request.session[:name] = @request.params['player_name']
   end
 
   def user_level
     return @request.session[:level] if exist?(:level)
 
+    user_level_set
+  end
+
+  def user_level_set
     @request.session[:level] = @request.params['level']
   end
 
   def user_attempts
-    return @request.session[:game].attempts if exist?(:game)
-
-    Codebreaker::Gamebreaker::GAME_LEVEL[user_level.to_sym][:attempts]
+    game_session.attempts
   end
 
   def user_hints
-    return @request.session[:game].hints if exist?(:game)
-
-    Codebreaker::Gamebreaker::GAME_LEVEL[user_level.to_sym][:hints]
+    game_session.hints
   end
 
   def used_hints
     return @request.session[:used_hints] if exist?(:used_hints)
 
+    set_hints
+  end
+
+  def set_hints
     @request.session[:used_hints] = []
   end
 

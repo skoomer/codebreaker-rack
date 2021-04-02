@@ -37,13 +37,11 @@
               <div class="form-group">
                 <label for="level" class="lead label"><%= I18n.t(:game_level) %></label>
                 <select class="custom-select" name="level" required="">
-                <%= Codebreaker::Constants::GAME_LEVEL.keys.each do  |x| puts x.to_s} %>
                   <option value=""><%= I18n.t(:choose_level) %></option>
                   <option value="easy"><%= I18n.t(:easy) %></option>
                   <option value="medium"><%= I18n.t(:medium) %></option>
                   <option value="hell"><%= I18n.t(:hell) %></option>
                 </select>
-                <% end %>
               </div>
 
               <hr class="mb-4">

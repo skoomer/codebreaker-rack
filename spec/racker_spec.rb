@@ -25,7 +25,7 @@ RSpec.describe Racker do
       end
 
       it 'sets game session' do
-        get '/game'
+        get '/game', game: game
 
         expect(last_request.session[:game]).to eq(game)
       end

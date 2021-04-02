@@ -89,7 +89,6 @@ class Racker
   end
 
   def start_game
-    binding.pry
     return game_session if exist?(:game)
 
     return false if @request.params.empty?

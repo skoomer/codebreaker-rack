@@ -17,4 +17,3 @@ gem 'rspec', '3.10.0', require: false
 gem 'rubocop', '1.11.0', require: false
 gem 'rubocop-rspec', '2.2.0', require: false
 gem 'simplecov', '0.21.2', require: false, group: :test
-gem 'wisper', '2.0.0'

@@ -24,19 +24,19 @@
               <button type="button" class="btn btn-primary" disabled>
                 <%= I18n.t(:level) %>
                 <span class="badge badge-light">
-                  <%= user_level %>
+                  <%= game_session.game_level.difficulty %>
                 </span>
               </button>
               <button type="button" class="btn btn-primary" disabled>
                 <%= I18n.t(:attempts_left) %>
                 <span class="badge badge-light">
-                  <%= user_attempts %>/<%= Codebreaker::Gamebreaker::GAME_LEVEL[user_level.to_sym][:attempts] %>
+                 <%= game_session.attempts %>/<%= Codebreaker::Gamebreaker::GAME_LEVEL[game_session.game_level.difficulty.to_sym][:attempts] %>
                 </span>
               </button>
               <button type="button" class="btn btn-primary" disabled>
                 <%= I18n.t(:hints_left) %>
                 <span class="badge badge-light">
-                  <%= user_hints %>/<%= Codebreaker::Gamebreaker::GAME_LEVEL[user_level.to_sym][:hints] %>
+                  <%= game_session.hints %>/<%= Codebreaker::Gamebreaker::GAME_LEVEL[game_session.game_level.difficulty.to_sym][:hints] %>
                 </span>
               </button>
             </div>
@@ -46,14 +46,14 @@
             <div class="text-center">
               <div class="text-center">
                 <h3 class="text-white">
-                  <%= I18n.t(:congratulations, name: user_name) %>
+                  <%= I18n.t(:congratulations, name: game_session.user.username) %>
                 </h3>
               </div>
               <img src="stylesheets/dist/images/won.gif" class="img-fluid" alt="You won the game!">
             </div>
           </div>
           <hr class="mb-4">
-          <a class="btn btn-primary btn-lg" href="/" role="button">
+          <a class="btn btn-primary btn-lg" href="/reset" role="button">
             <%= I18n.t(:play_again) %>
           </a>
           <a class="btn btn-success btn-lg float-right" href="/statistics" role="button">

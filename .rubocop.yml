@@ -13,8 +13,11 @@ Style/FrozenStringLiteralComment:
 RSpec/MultipleMemoizedHelpers:
   Enabled: false
 
+Metrics/MethodLength:
+  Exclude:
+    - 'app/router.rb'
+
 Metrics/BlockLength:
   Exclude:
     - 'spec/**/*'
     - 'vendor/**/*'
-

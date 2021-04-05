@@ -23,7 +23,7 @@
           </div>
 
           <p class="lead text-white-70">
-            <%= I18n.t(:hello_message, name: user_name) %>
+            <%= I18n.t(:hello_message, name: game_session.user.username) %>
             <%= I18n.t(:short_rules) %>
           </p>
 
@@ -34,7 +34,7 @@
               <button type="button" class="btn btn-primary" disabled>
                 <%= I18n.t(:level) %>
                 <span class="badge badge-light">
-                  <%= user_level %>
+                  <%= game_session.game_level.difficulty %>
                 </span>
               </button>
             </div>
@@ -44,7 +44,7 @@
               <button type="button" class="btn btn-primary" disabled>
                 <%= I18n.t(:attempts)%>
                 <span class="badge badge-light">
-                <%= user_attempts %>
+                <%= game_session.attempts %>
                 </span>
               </button>
 
@@ -54,7 +54,7 @@
 
               <button type="button" class="btn btn-primary float-right">
                 <%= I18n.t(:hints)%>
-                <span class="badge badge-light"><%= user_hints %></span>
+                <span class="badge badge-light"><%= game_session.hints %></span>
               </button>
 
             </div>
@@ -112,16 +112,17 @@
               <button type="submit" class="btn btn-primary btn-lg">
                 Submit
               </button>
+              <%=game_session.secret_code%>
             </form>
 
             <form method="post" action="/hint">
               <button id="pos" class="btn btn-warning btn-lg float-right" role="button" style="margin: -45px 0px 30px;"
-
+              
                 <% if hints_zero? %> disabled <% end %>>
                   <%= I18n.t(:show_hint) %>
                 <% if used_hints.any? %>
                   <span class="badge badge-light">
-                  <%= used_hints.join(",") %>
+                  <%= used_hints.join(' , ') %>
                   </span>
                 <% end %>
               </button>

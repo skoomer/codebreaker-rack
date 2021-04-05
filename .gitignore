@@ -1,0 +1,16 @@
+/.bundle/
+/coverage/
+/pkg/
+/spec/reports/
+/tmp/
+/node_modules/
+yarn.lock
+*.gem
+*.rbc
+doc/
+lib/bundler/man
+pkg
+rdoc
+.txt
+/.vscode/
+game_stats.yaml

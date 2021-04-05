@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" class="mdl-js">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="stylesheets/favicon.ico" rel="icon">
+    <link href="stylesheets/dist/css/styles.css" rel="stylesheet">
+    <link href="/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script href="/jquery/dist/jquery.min.js" rel="stylesheet"></script>
+    <script href="/bootstrap/dist/js/bootstrap.min.js" rel="stylesheet"></script>
+
+    <title><%= I18n.t(:codebreaker_web) %></title> 
+  </head>
+<body>
+  <section id="introduction">
+    <div class="container">
+      <div class="row fill-viewport align-items-center justify-content-center">
+        <div class="col-12 col-md-6">
+          <div class="row">
+            <div class="col-md-auto">
+              <h1 class="text-white title"><%= I18n.t(:codebreaker)%></h1>
+            </div>
+          </div>
+
+          <p class="lead text-white-70">
+            <%= I18n.t(:hello_message, name: game_session.user.username) %>
+            <%= I18n.t(:short_rules) %>
+          </p>
+
+          <hr class="mb-4">
+
+          <div class="row">
+            <div class="col button">
+              <button type="button" class="btn btn-primary" disabled>
+                <%= I18n.t(:level) %>
+                <span class="badge badge-light">
+                  <%= game_session.game_level.difficulty %>
+                </span>
+              </button>
+            </div>
+
+            <div class="col text-center button">
+
+              <button type="button" class="btn btn-primary" disabled>
+                <%= I18n.t(:attempts)%>
+                <span class="badge badge-light">
+                <%= game_session.attempts %>
+                </span>
+              </button>
+
+            </div>
+
+            <div class="col button">
+
+              <button type="button" class="btn btn-primary float-right">
+                <%= I18n.t(:hints)%>
+                <span class="badge badge-light"><%= game_session.hints %></span>
+              </button>
+
+            </div>
+          </div>
+
+          <hr class="mb-4">
+
+          <form method="post" action="/guess">
+            <div class="form-group">
+              <input class="form-control guess_input" name="guess_code" pattern="^[1-6]{4}$"
+                <% if game_session.guess.nil? %>
+
+                 placeholder="1234" 
+
+                <% else %>
+
+                placeholder="<%= game_session.guess.join %>"
+                 <% end %> 
+
+                required="" autocomplete="off">
+            </div>
+
+            <div class="form-group guess_markers_list">
+              <div id="guess_marker">
+
+                <% if game_session.guess.nil? %>
+                <% 4.times do %>
+
+                <button type="button" class="btn btn-danger marks" disabled>x</button>
+                <% end %>
+
+                <% else %>
+
+                <% @request.session[:guess_code].split('').each do |el| %>
+
+                <% if el == '+' %> <button type="button" class="btn btn-success marks" disabled>+</button>
+
+                <% elsif el == '-' %> <button type="button" class="btn btn-primary marks" disabled>-</button>
+
+                <% end %>
+                <% end %>
+
+                <% for i in 0...4 do %>
+
+                <% unless @request.session[:guess_code].split('')[i] %><button type="button"
+                  class="btn btn-danger marks" disabled>X</button> <% end %>
+                  
+                <% end %>
+                <% end %>
+
+              </div>
+            </div>
+
+            <hr class="mb-4">
+              <button type="submit" class="btn btn-primary btn-lg">
+                Submit
+              </button>
+              <%=game_session.secret_code%>
+            </form>
+
+            <form method="post" action="/hint">
+              <button id="pos" class="btn btn-warning btn-lg float-right" role="button" style="margin: -45px 0px 30px;"
+              
+                <% if hints_zero? %> disabled <% end %>>
+                  <%= I18n.t(:show_hint) %>
+                <% if used_hints.any? %>
+                  <span class="badge badge-light">
+                  <%= used_hints.join(' , ') %>
+                  </span>
+                <% end %>
+              </button>
+            </form>
+            
+          </div>
+        </div>
+       </div>
+    </section>
+  </body>
+</html>

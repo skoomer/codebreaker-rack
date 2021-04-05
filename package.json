@@ -1,0 +1,16 @@
+{ 
+  "name": "codebreaker-rack-garage",
+  "version": "1.0.0",
+  "description": "logic_game",
+  "repository": "https://github.com/skoomer/codebreaker-rack",
+  "engines": {
+    "node": ">= 15.12.0",
+    "yarn": ">= 1.22.5"
+  },
+  "dependencies": {
+    "bootstrap": "4.6.0",
+    "jquery": "^3.6.0",
+    "popper.js": "^1.16.1"
+  }
+}
+
